@@ -16,7 +16,7 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
 public class History {
 
-	//private static String url = "http://bleum-hydrang-2/research/Hydra_research";
+	//private static String url = "http://?-hydrang-2/research/Hydra_research";
 	//private static String user = "vince.chen";
 	//private static String pass = "Qwert,2005";
 
