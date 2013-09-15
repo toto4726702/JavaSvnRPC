@@ -10,7 +10,7 @@
     <description></description>
     <display-name>FileUpload</display-name>
     <servlet-name>FileUpload</servlet-name>
-    <servlet-class>com.bleum.controller.FileUpload</servlet-class>
+    <servlet-class>cn.edu.shiep.controller.FileUpload</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>FileUpload</servlet-name>
@@ -20,7 +20,7 @@
     <description></description>
     <display-name>SVNSyn</display-name>
     <servlet-name>SVNSyn</servlet-name>
-    <servlet-class>com.bleum.controller.SVNSyn</servlet-class>
+    <servlet-class>cn.edu.shiep.controller.SVNSyn</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SVNSyn</servlet-name>

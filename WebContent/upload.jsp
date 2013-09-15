@@ -1,6 +1,6 @@
 <%@page import="org.tmatesoft.svn.core.SVNDepth"%>
 <%@page import="org.tmatesoft.svn.core.wc.SVNRevision"%>
-<%@page import="com.bleum.svn.WorkingCopy"%>
+<%@page import="cn.edu.shiep.svn.WorkingCopy"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.UUID"%>

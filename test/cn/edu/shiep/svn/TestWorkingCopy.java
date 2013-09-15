@@ -30,7 +30,7 @@ public class TestWorkingCopy {
 	@Test
 	public void testCopyTag() throws SVNException{
 		String tagName = "MyRepo02";
-		copy.copy(new SVNCopySource[]{new SVNCopySource(SVNRevision.HEAD, SVNRevision.HEAD, SVNURL.parseURIEncoded("http://bleum-hydrang-2/research/Hydra_research/MyRepos"))}, SVNURL.parseURIEncoded("http://bleum-hydrang-2/research/Hydra_research/TAG/"+tagName), "svn test");
+		copy.copy(new SVNCopySource[]{new SVNCopySource(SVNRevision.HEAD, SVNRevision.HEAD, SVNURL.parseURIEncoded("http://?-hydrang-2/research/Hydra_research/MyRepos"))}, SVNURL.parseURIEncoded("http://?-hydrang-2/research/Hydra_research/TAG/"+tagName), "svn test");
 	}
 	 
 	@Test
@@ -53,7 +53,7 @@ public class TestWorkingCopy {
 		try {
 			copy.delete(new File("D:/Documents and Settings/Vince.Chen/Desktop/Copy2/test3/add.txt"), false);
 		} catch (Exception e) {
-			throw new MySVNException(SVNErrorCode.CHECKSUM_MISMATCH, "Bleum:É¾³ý´íÎó");
+			throw new MySVNException(SVNErrorCode.CHECKSUM_MISMATCH, "?:É¾³ý´íÎó");
 		}
 	}
 	
@@ -69,12 +69,12 @@ public class TestWorkingCopy {
 	
 	@Test
 	public void testCreateFolder() throws SVNException{
-		copy.makeDirectory(SVNURL.parseURIEncoded("http://bleum-hydrang-2/research/Hydra_research/Copy/test5"), "svn test");
+		copy.makeDirectory(SVNURL.parseURIEncoded("http://?-hydrang-2/research/Hydra_research/Copy/test5"), "svn test");
 	}
 	
 	@Test
 	public void testUploadFolder()throws SVNException{
-		copy.importDirectory(new File("C:/Documents and Settings/Vince.Chen/Desktop/Test"), SVNURL.parseURIEncoded("http://bleum-hydrang-2/research/Hydra_research/Copy/Test"), "svn test", true);
+		copy.importDirectory(new File("C:/Documents and Settings/Vince.Chen/Desktop/Test"), SVNURL.parseURIEncoded("http://?-hydrang-2/research/Hydra_research/Copy/Test"), "svn test", true);
 	}
 	
 	@Test
@@ -89,13 +89,13 @@ public class TestWorkingCopy {
 	
 	@Test
 	public void testRepairSVN() throws SVNException{
-		//copy.checkout(SVNURL.parseURIEncoded("http://bleum-hydrang-2/research/Hydra_research/MyRepos/importFiles"), SVNRevision.HEAD, new File("C:/Documents and Settings/Vince.Chen/Desktop/Test2/"), true, true);
+		//copy.checkout(SVNURL.parseURIEncoded("http://?-hydrang-2/research/Hydra_research/MyRepos/importFiles"), SVNRevision.HEAD, new File("C:/Documents and Settings/Vince.Chen/Desktop/Test2/"), true, true);
 		//copy.update(new File("C:/Documents and Settings/Vince.Chen/Desktop/Test2/importFiles"), SVNRevision.HEAD, true, true);
 	}
 	
 	@Test
 	public void testRepairSVN2() throws SVNException, IOException{
-		copy.checkout("http://bleum-hydrang-2/research/Hydra_research/MyRepos", SVNRevision.HEAD,SVNDepth.EMPTY, "C:/Documents and Settings/Vince.Chen/Desktop/Test2", true, true);
+		copy.checkout("http://?-hydrang-2/research/Hydra_research/MyRepos", SVNRevision.HEAD,SVNDepth.EMPTY, "C:/Documents and Settings/Vince.Chen/Desktop/Test2", true, true);
 		File newFile = new File("C:/Documents and Settings/Vince.Chen/Desktop/Test2/importFileC.txt");
 		newFile.createNewFile();
 		copy.update("C:/Documents and Settings/Vince.Chen/Desktop/Test2/importFileC.txt", SVNRevision.HEAD, SVNDepth.FILES, true);
@@ -104,17 +104,17 @@ public class TestWorkingCopy {
 	@Test
 	public void testProcess() throws Exception{
 		//make a directory
-		copy.makeDirectory(SVNURL.parseURIEncoded("http://bleum-hydrang-2/research/Hydra_research/MyRepos"), "svn test");
+		copy.makeDirectory(SVNURL.parseURIEncoded("http://?-hydrang-2/research/Hydra_research/MyRepos"), "svn test");
 		//import a directory
-		copy.importDirectory(new File("C:/Documents and Settings/Vince.Chen/Desktop/Test/ImportDir"), SVNURL.parseURIEncoded("http://bleum-hydrang-2/research/Hydra_research/MyRepos/"), "svn test", true);
+		copy.importDirectory(new File("C:/Documents and Settings/Vince.Chen/Desktop/Test/ImportDir"), SVNURL.parseURIEncoded("http://?-hydrang-2/research/Hydra_research/MyRepos/"), "svn test", true);
 		//check out repo
-		copy.checkout("http://bleum-hydrang-2/research/Hydra_research/MyRepos", SVNRevision.HEAD,SVNDepth.fromRecurse(true), "C:/Documents and Settings/Vince.Chen/Desktop/Test/MyRepos", true ,false);
+		copy.checkout("http://?-hydrang-2/research/Hydra_research/MyRepos", SVNRevision.HEAD,SVNDepth.fromRecurse(true), "C:/Documents and Settings/Vince.Chen/Desktop/Test/MyRepos", true ,false);
 	}
 	
 	//Error
 	@Test
 	public void testCheckout() throws SVNException{
-		copy.checkout("http://bleum-hydrang-2/research/Hydra_research/Copy/test3", SVNRevision.HEAD,SVNDepth.fromRecurse(true), "D:/good", true,false);
+		copy.checkout("http://?-hydrang-2/research/Hydra_research/Copy/test3", SVNRevision.HEAD,SVNDepth.fromRecurse(true), "D:/good", true,false);
 	}
 	
 }
